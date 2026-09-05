@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+eclipse.project.name = 'FillThisIn' 
+
+sourceSets {
+	main {
+	  java {
+		srcDirs = ['src']
+	  }
+	}
+	test {
+	  java {
+	     srcDirs = ['test']
+	  }
+	 }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation('org.junit.jupiter:junit-jupiter:5.10.2')
+	testImplementation('org.mockito:mockito-core:5.10.0')
+	implementation('com.google.code.gson:gson:2.13.1')
+}
+
+test {
+    useJUnitPlatform()
+}
