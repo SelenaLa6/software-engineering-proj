@@ -1,6 +1,6 @@
 public class HelloWorld {
     public static void main (String[] args) {
-        //This is a bad comment.
-        System.out.println("Hello World!")
+        // This is a good comment.
+        System.out.println("Hello World!");
     }
 }
