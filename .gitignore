@@ -13,3 +13,6 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+
+# Compiled Java class files
+*.class
