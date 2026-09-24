@@ -8,3 +8,5 @@ Example:
 input = 12
 output = 1
 (The 12th digit of 0.12345678910111213... is "1")
+
+![System diagram.](/SWE%20API%20Diagram.png)
