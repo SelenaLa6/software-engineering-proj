@@ -6,7 +6,7 @@ import project.annotations.NetworkAPI;
 public interface ServerApi {
 
     SubmitJobResponse acceptJob(SubmitJobRequest request);
-    void configureJob(DataSource source, DataDestination destination, char[] delimiters);
+    void configureJob(DataSource source, DataDestination destination, Character[] delimiters);
     JobResult runJob();
 
 }

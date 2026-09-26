@@ -25,7 +25,7 @@ public class ServerApiPrototype {
                 server.configureJob(
                     submitJobResponse.getSource(),
                     submitJobResponse.getDestination(),
-                    new char[] {':', '\n'}
+                    new Character[] {':', '\n'}
                 );
             }
 
