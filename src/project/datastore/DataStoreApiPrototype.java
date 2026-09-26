@@ -7,13 +7,19 @@ public class DataStoreApiPrototype {
     @ProcessAPIPrototype 
     public void prototype(DataStoreApi dataStore) {
 
-        // load data
-        LoadDataRequest loadDataRequest = new LoadDataRequest() {};
-        LoadDataResponse loadDataResponse = dataStore.loadData(loadDataRequest);
+        // Client tries to load some data.
+        LoadDataResponse loadDataResponse = dataStore.load(new LoadDataRequest() {});
 
-        // store data
-        StoreDataRequest storeDataRequest = new StoreDataRequest() {};
-        StoreDataResponse storeDataResponse = dataStore.storeData(storeDataRequest);
+        // Was the load successful?
+        if (loadDataResponse.isSuccessful()) {
+
+            // Retrieve the requested data.
+            int[] dataLoaded = loadDataResponse.getData();
+
+        }
+
+        // Client tries to store some data.
+        StoreDataResponse storeDataResponse = dataStore.store(new StoreDataRequest() {});
 
     }
 

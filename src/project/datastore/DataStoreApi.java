@@ -5,7 +5,7 @@ import project.annotations.ProcessAPI;
 @ProcessAPI 
 public interface DataStoreApi {
 
-    LoadDataResponse loadData(LoadDataRequest loadRequest);
-    StoreDataResponse storeData(StoreDataRequest storeRequest);
+    LoadDataResponse load(LoadDataRequest loadRequest);
+    StoreDataResponse store(StoreDataRequest storeRequest);
     
 }
