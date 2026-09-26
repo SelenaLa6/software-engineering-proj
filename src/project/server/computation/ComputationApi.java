@@ -5,6 +5,6 @@ import project.annotations.ConceptualAPI;
 @ConceptualAPI 
 public interface ComputationApi {
     
-    ComputeResponse run(ComputeRequest request);
+    ComputeResponse compute(ComputeRequest request);
 
 }

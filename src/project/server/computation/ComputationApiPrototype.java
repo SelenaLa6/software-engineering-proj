@@ -8,8 +8,8 @@ public class ComputationApiPrototype {
     public void prototype(ComputationApi engine) {
 
         // Client runs computation.
-        ComputeResponse computeResponse = engine.run(new ComputeRequest() {});
-        
+        ComputeResponse computeResponse = engine.compute(new ComputeRequest() {});
+
     }
 
 }
