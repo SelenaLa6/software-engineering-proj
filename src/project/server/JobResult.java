@@ -1,5 +1,5 @@
 package project.server;
 
-public interface JobRequest {
+public interface JobResult {
     
 }
