@@ -6,7 +6,7 @@ public interface SubmitJobResponse {
 
     DataSource getSource();
     DataDestination getDestination();
-    char[] getDelimiters();
+    Character[] getDelimiters();
 
     boolean isValid();
 
