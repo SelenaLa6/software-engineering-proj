@@ -14,7 +14,7 @@ public class DataStoreApiPrototype {
         if (loadDataResponse.isSuccessful()) {
 
             // Retrieve the requested data.
-            Integer[] dataLoaded = loadDataResponse.getData();
+            DataWrapper dataLoaded = loadDataResponse.getData();
 
         }
 
