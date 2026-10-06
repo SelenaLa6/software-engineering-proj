@@ -2,7 +2,7 @@ package project.datastore;
 
 public interface LoadDataResponse {
 
-    boolean isSuccessful();
+    LoadResponseCode getResponseCode();
     DataWrapper getData();
 
 }
