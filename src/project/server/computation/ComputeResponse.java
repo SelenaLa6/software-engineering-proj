@@ -2,7 +2,7 @@ package project.server.computation;
 
 public interface ComputeResponse {
     
-    ResponseCode getResponseCode();
+    ComputeResponseCode getResponseCode();
     ComputeOutput getOutput();
 
 }
