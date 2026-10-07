@@ -12,7 +12,7 @@ public class DataStoreApiPrototype {
         LoadDataResponse loadResponse = dataStore.load(loadRequest);
 
         // If the load was successful,
-        if (loadResponse.getResponseCode().isSuccessful()) {
+        if (loadResponse.getResponseCode().successful) {
 
             // Let the client see the retrieved data.
             DataWrapper dataLoaded = loadResponse.getData();
