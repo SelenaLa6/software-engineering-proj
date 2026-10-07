@@ -9,7 +9,7 @@ public class JobHandlerApiPrototype {
 
         // Client submits some job to compute.
         SubmitJobRequest request = new SubmitJobRequest() {};
-        SubmitJobResponse response = jobHandler.configureJob(request);
+        SubmitJobResponse response = jobHandler.runJob(request);
 
         // Client is told whether job was successful or not.
         System.out.println("Result: " + response.getResponseCode());
