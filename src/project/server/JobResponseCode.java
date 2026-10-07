@@ -1,5 +1,14 @@
 package project.server;
 
-public interface JobResponseCode {
+public enum JobResponseCode {
     
+    SUCCESS(true),
+    FAILURE(false);
+
+    private final boolean successful;
+
+    private JobResponseCode(boolean successful) {
+        this.successful = successful;
+    }
+
 }
