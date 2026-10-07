@@ -12,7 +12,7 @@ public class ComputationApiPrototype {
         ComputeResponse response = engine.compute(request);
 
         // If computation was successful
-        if (response.getResponseCode().isSuccessful()) {
+        if (response.getResponseCode().successful) {
 
             // Client can see result of computation
             ComputeOutput output = response.getOutput();
