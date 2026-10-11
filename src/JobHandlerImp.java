@@ -9,6 +9,12 @@ public class JobHandlerImp implements JobHandlerApi {
     private DataStoreApi dataStore;
     private ComputationApi computeEngine;
 
+    // Just this constructor for now for testing purposes
+    public JobHandlerImp(DataStoreApi dataStore, ComputationApi computeEngine) {
+        this.dataStore = dataStore;
+        this.computeEngine = computeEngine;
+    }
+
     public SubmitJobResponse runJob(SubmitJobRequest request) {
         return null;
     }
