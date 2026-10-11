@@ -1,14 +1,20 @@
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import project.server.SubmitJobRequest;
 import project.server.SubmitJobResponse;
-
+import project.server.computation.ComputationApi;
+import project.datastore.DataStoreApi;
 public class TestJobHandlerImp {
     
     @Test
     public void jobHandlerSmokeTest() {
 
-        JobHandlerImp testJobHandler = new JobHandlerImp();
+        // Mock dependency APIs
+        DataStoreApi mockDataStore = mock(DataStoreApi.class);
+        ComputationApi mockCompute = mock(ComputationApi.class);
+
+        JobHandlerImp testJobHandler = new JobHandlerImp(mockDataStore, mockCompute);
 
         // User submits some job to run.
         SubmitJobRequest mockRequest = mock(SubmitJobRequest.class);
