@@ -22,7 +22,7 @@ public class DataStoreApiPrototype {
         if (loadResponse.getResponseCode().successful) {
 
             // Let the client see the retrieved data.
-            DataWrapper dataLoaded = loadResponse.getData();
+            LoadDataWrapper dataLoaded = loadResponse.getData();
 
         }
 
@@ -30,6 +30,11 @@ public class DataStoreApiPrototype {
         StoreDataRequest storeRequest = new StoreDataRequest() {
             @Override
             public DataLocation getStoreLocation() {
+                // TODO Auto-generated method stub
+                return null;
+            }
+            @Override
+            public StoreDataWrapper getData() {
                 // TODO Auto-generated method stub
                 return null;
             }

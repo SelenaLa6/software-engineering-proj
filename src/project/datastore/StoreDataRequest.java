@@ -5,5 +5,6 @@ import project.server.DataLocation;
 public interface StoreDataRequest {
     
     DataLocation getStoreLocation();
+    StoreDataWrapper getData();
 
 }
