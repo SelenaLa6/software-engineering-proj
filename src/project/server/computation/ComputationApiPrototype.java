@@ -8,7 +8,13 @@ public class ComputationApiPrototype {
     public void prototype(ComputationApi engine) {
 
         // Client submits a computation to perform.
-        ComputeRequest request = new ComputeRequest() {};
+        ComputeRequest request = new ComputeRequest() {
+            @Override
+            public InputData getInputData() {
+                // TODO Auto-generated method stub
+                return null;
+            }
+        };
         ComputeResponse response = engine.compute(request);
 
         // If computation was successful
