@@ -1,6 +1,7 @@
 package project.datastore;
 
 import project.annotations.ProcessAPIPrototype;
+import project.server.DataLocation;
 
 public class DataStoreApiPrototype {
     
@@ -8,7 +9,13 @@ public class DataStoreApiPrototype {
     public void prototype(DataStoreApi dataStore) {
 
         // Client tries to load data.
-        LoadDataRequest loadRequest = new LoadDataRequest() {};
+        LoadDataRequest loadRequest = new LoadDataRequest() {
+            @Override
+            public DataLocation getLoadLocation() {
+                // TODO Auto-generated method stub
+                return null;
+            }
+        };
         LoadDataResponse loadResponse = dataStore.load(loadRequest);
 
         // If the load was successful,
@@ -20,7 +27,13 @@ public class DataStoreApiPrototype {
         }
 
         // Client tries to store some data.
-        StoreDataRequest storeRequest = new StoreDataRequest() {};
+        StoreDataRequest storeRequest = new StoreDataRequest() {
+            @Override
+            public DataLocation getStoreLocation() {
+                // TODO Auto-generated method stub
+                return null;
+            }
+        };
         StoreDataResponse storeResponse = dataStore.store(storeRequest);
 
         // Let the client know if the store was successful or not.
