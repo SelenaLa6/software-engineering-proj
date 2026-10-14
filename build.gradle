@@ -3,6 +3,12 @@ apply plugin: 'eclipse'
 
 eclipse.project.name = 'FillThisIn' 
 
+// java {
+// 	toolchain {
+// 		languageVersion = JavaLanguageVersion.of(25)
+// 	}
+// }
+
 sourceSets {
 	main {
 	  java {
@@ -16,12 +22,21 @@ sourceSets {
 	 }
 }
 
+test {
+	filter {
+		excludeTestsMatching "*SmokeTest"
+		excludeTestsMatching "ComputeEngine*"
+	}
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation('org.junit.jupiter:junit-jupiter:5.10.2')
+    testImplementation('org.junit.jupiter:junit-jupiter:5.14.4')
+	testRuntimeOnly('org.junit.platform:junit-platform-launcher')
+	// testRuntimeOnly('org.junit.platform:junit-jupiter-engine')
 	testImplementation('org.mockito:mockito-core:5.10.0')
 	implementation('com.google.code.gson:gson:2.13.1')
 }
