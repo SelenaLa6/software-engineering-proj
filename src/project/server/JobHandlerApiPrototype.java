@@ -8,7 +8,23 @@ public class JobHandlerApiPrototype {
     public void prototype(JobHandlerApi jobHandler) {
 
         // Client submits some job to compute.
-        SubmitJobRequest request = new SubmitJobRequest() {};
+        SubmitJobRequest request = new SubmitJobRequest() {
+            @Override
+            public Character[] getDelimiters() {
+                // TODO Auto-generated method stub
+                return null;
+            }
+            @Override
+            public DataLocation getDestination() {
+                // TODO Auto-generated method stub
+                return null;
+            }
+            @Override
+            public DataLocation getSource() {
+                // TODO Auto-generated method stub
+                return null;
+            }
+        };
         SubmitJobResponse response = jobHandler.runJob(request);
 
         // Client is told whether job was successful or not.
