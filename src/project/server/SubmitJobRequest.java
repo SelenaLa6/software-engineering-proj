@@ -2,8 +2,8 @@ package project.server;
 
 public interface SubmitJobRequest {
 
-    public DataLocation getSource();
-    public DataLocation getDestination();
+    public InputDataLocation getSource();
+    public OutputDataLocation getDestination();
     public Character[] getDelimiters();
 
 }

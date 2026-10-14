@@ -1,7 +1,8 @@
 package project.datastore;
 
 import project.annotations.ProcessAPIPrototype;
-import project.server.DataLocation;
+import project.server.InputDataLocation;
+import project.server.OutputDataLocation;
 
 public class DataStoreApiPrototype {
     
@@ -11,7 +12,7 @@ public class DataStoreApiPrototype {
         // Client tries to load data.
         LoadDataRequest loadRequest = new LoadDataRequest() {
             @Override
-            public DataLocation getLoadLocation() {
+            public InputDataLocation getLoadLocation() {
                 // TODO Auto-generated method stub
                 return null;
             }
@@ -29,7 +30,7 @@ public class DataStoreApiPrototype {
         // Client tries to store some data.
         StoreDataRequest storeRequest = new StoreDataRequest() {
             @Override
-            public DataLocation getStoreLocation() {
+            public OutputDataLocation getStoreLocation() {
                 // TODO Auto-generated method stub
                 return null;
             }

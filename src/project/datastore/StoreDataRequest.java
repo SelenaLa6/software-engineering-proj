@@ -1,10 +1,10 @@
 package project.datastore;
 
-import project.server.DataLocation;
+import project.server.OutputDataLocation;
 
 public interface StoreDataRequest {
     
-    DataLocation getStoreLocation();
+    OutputDataLocation getStoreLocation();
     StoreDataWrapper getData();
 
 }
