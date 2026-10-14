@@ -59,7 +59,7 @@ public class TestJobHandlerImp {
         when(mockRequest.getDestination())
             .thenReturn(mock(OutputDataLocation.class));
         when(mockRequest.getDelimiters())
-            .thenReturn(new Character[] {',',';'});
+            .thenReturn(new Character[] {});
 
         // Job Handler should return a response.
         SubmitJobResponse response = testJobHandler.runJob(mockRequest);
