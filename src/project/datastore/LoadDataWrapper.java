@@ -1,5 +1,5 @@
 package project.datastore;
 
-public interface DataWrapper {
+public interface LoadDataWrapper {
     
 }

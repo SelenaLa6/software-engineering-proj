@@ -1,7 +1,14 @@
 package project.datastore;
 
-public interface LoadResponseCode {
+public enum LoadResponseCode {
     
-    boolean isSuccessful();
+    SUCCESS(true),
+    FAILURE(false);
+
+    public final boolean successful;
+
+    private LoadResponseCode(boolean successful) {
+        this.successful = successful;
+    }
 
 }
