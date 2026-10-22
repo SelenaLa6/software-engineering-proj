@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import project.server.InputDataLocation;
-import project.server.OutputDataLocation;
 import project.server.SubmitJobRequest;
 
 import java.util.ArrayList;
@@ -14,17 +12,17 @@ public class ComputeEngineIntegrationTest {
     public void ComputeEngineTest() {
 
         // Instantiate all 3 APIs
-        TestDataStore testDataStore = new TestDataStore();
+        InMemDataStore testDataStore = new InMemDataStore();
         ComputeEngineImp testComputeEngine = new ComputeEngineImp();
         JobHandlerImp testJobHandler = new JobHandlerImp(
             testDataStore, testComputeEngine);
 
         // Initial input
-        TestInputConfig input = new TestInputConfig();
+        InMemInputConfig input = new InMemInputConfig();
         input.inputList = List.of(1,10,25);
 
         // Output write location
-        TestOutputConfig output = new TestOutputConfig();
+        InMemOutputConfig output = new InMemOutputConfig();
         output.outputList = new ArrayList<String>();
 
         // Make a new SubmitJobRequest
