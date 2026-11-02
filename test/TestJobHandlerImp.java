@@ -49,7 +49,8 @@ public class TestJobHandlerImp {
             .thenReturn(mockComputeResponse);
         when(mockComputeResponse.getResponseCode())
             .thenReturn(ComputeResponseCode.SUCCESS);
-
+when(mockComputeResponse.getOutput())
+        .thenReturn(ComputeOutput.class);
 
         JobHandlerImp testJobHandler = new JobHandlerImp(mockDataStore, mockCompute);
 
