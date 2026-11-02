@@ -35,7 +35,8 @@ public class TestJobHandlerImp {
             .thenReturn(mockLoadResponse);
         when(mockLoadResponse.getResponseCode())
             .thenReturn(LoadResponseCode.SUCCESS);
-        
+        when(mockLoadResponse.getData())
+                .thenReturn(LoadDataWrapper.class);
         StoreDataResponse mockStoreResponse = mock(StoreDataResponse.class);
         when(mockDataStore.store(any(StoreDataRequest.class)))
             .thenReturn(mock(StoreDataResponse.class));
