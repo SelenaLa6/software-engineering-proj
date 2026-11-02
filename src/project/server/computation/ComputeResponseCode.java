@@ -1,7 +1,14 @@
 package project.server.computation;
 
-public interface ComputeResponseCode {
+public enum ComputeResponseCode {
     
-    boolean isSuccessful();
+    SUCCESS(true),
+    FAILURE(false);
+
+    public final boolean successful;
+
+    private ComputeResponseCode(boolean successful) {
+        this.successful = successful;
+    }
 
 }

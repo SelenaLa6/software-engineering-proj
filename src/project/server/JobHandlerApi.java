@@ -5,6 +5,6 @@ import project.annotations.NetworkAPI;
 @NetworkAPI
 public interface JobHandlerApi {
 
-    SubmitJobResponse configureJob(SubmitJobRequest request);
+    SubmitJobResponse runJob(SubmitJobRequest request);
 
 }
