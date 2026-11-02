@@ -9,7 +9,7 @@ import java.util.List;
 public class ComputeEngineIntegrationTest {
     
     @Test 
-    public void ComputeEngineTest() {
+    public void computeEngineTest() {
 
         // Instantiate all 3 APIs
         InMemDataStore testDataStore = new InMemDataStore();
