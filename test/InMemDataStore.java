@@ -18,7 +18,7 @@ class InMemDataStore implements DataStoreApi {
             public List<Integer> loadedData = inputLocation.inputList;
             @Override
             public LoadResponseCode getResponseCode() {
-                if (loadedData != null)
+                if (inputLocation != null && inputLocation.inputList != null)
                     return LoadResponseCode.SUCCESS;
                 else
                     return LoadResponseCode.FAILURE;
