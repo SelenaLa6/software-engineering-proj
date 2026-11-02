@@ -19,6 +19,8 @@ import project.server.computation.ComputeResponse;
 import project.datastore.LoadResponseCode;
 import project.datastore.StoreResponseCode;
 import project.server.computation.ComputeResponseCode;
+import project.datastore.LoadDataWrapper;
+import project.server.computation.ComputeOutput;
 
 public class TestJobHandlerImp {
     
@@ -36,7 +38,7 @@ public class TestJobHandlerImp {
         when(mockLoadResponse.getResponseCode())
             .thenReturn(LoadResponseCode.SUCCESS);
         when(mockLoadResponse.getData())
-                .thenReturn(LoadDataWrapper.class);
+                .thenReturn(mock(LoadDataWrapper.class));
         StoreDataResponse mockStoreResponse = mock(StoreDataResponse.class);
         when(mockDataStore.store(any(StoreDataRequest.class)))
             .thenReturn(mock(StoreDataResponse.class));
@@ -49,8 +51,8 @@ public class TestJobHandlerImp {
             .thenReturn(mockComputeResponse);
         when(mockComputeResponse.getResponseCode())
             .thenReturn(ComputeResponseCode.SUCCESS);
-when(mockComputeResponse.getOutput())
-        .thenReturn(ComputeOutput.class);
+        when(mockComputeResponse.getOutput())
+            .thenReturn(mock(ComputeOutput.class));
 
         JobHandlerImp testJobHandler = new JobHandlerImp(mockDataStore, mockCompute);
 

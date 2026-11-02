@@ -16,12 +16,15 @@ public class TestComputeEngineImp {
 
         // Client submits a request to compute something.
         ComputeRequest mockRequest = mock(ComputeRequest.class);
+        InputData mockInput = mock(InputData.class);
         when(mockRequest.getInputData())
-            .thenReturn(mock(InputData.class));
+            .thenReturn(mockInput);
+        // TODO: Mock behavior for mockInput when input format is finalized. Test input = 12, output = 1
 
         // Compute engine should successfully process the data.
         ComputeResponse response = testComputeEngine.compute(mockRequest);
         assertTrue(response.getResponseCode().successful);
+        // TODO: Assert that output is 1 when output format is finalized.
 
     }
 

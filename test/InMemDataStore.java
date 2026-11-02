@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 import project.datastore.DataStoreApi;
 import project.datastore.LoadDataRequest;
 import project.datastore.LoadDataResponse;
@@ -15,13 +16,14 @@ class InMemDataStore implements DataStoreApi {
         InMemInputConfig inputLocation = (InMemInputConfig)loadRequest.getLoadLocation();
 
         LoadDataResponse response = new LoadDataResponse() {
-            public List<Integer> loadedData = inputLocation.inputList;
+            public List<Integer> loadedData = deepCopyInput(inputLocation.inputList);
             @Override
             public LoadResponseCode getResponseCode() {
-                if (inputLocation != null && inputLocation.inputList != null)
+                if (inputLocation != null && inputLocation.inputList != null) {
                     return LoadResponseCode.SUCCESS;
-                else
+                } else {
                     return LoadResponseCode.FAILURE;
+                }
             }
             @Override
             public LoadDataWrapper getData() {
@@ -53,4 +55,13 @@ class InMemDataStore implements DataStoreApi {
         };
         return response;
     }
+
+    private List<Integer> deepCopyInput(List<Integer> originalList) {
+        List<Integer> newList = new ArrayList<>();
+        for (Integer item : originalList) {
+            newList.add(item);
+        }
+        return newList;
+    }
+
 }    
