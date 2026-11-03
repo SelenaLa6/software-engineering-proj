@@ -1,5 +1,7 @@
 package project.server.computation;
 
+import java.util.List;
+
 import project.annotations.ConceptualAPIPrototype;
 
 public class ComputationApiPrototype {
@@ -14,6 +16,12 @@ public class ComputationApiPrototype {
                 // TODO Auto-generated method stub
                 return null;
             }
+            @Override
+            public List<Character> getDelimiters() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'getDelimiters'");
+            }
+            
         };
         ComputeResponse response = engine.compute(request);
 
