@@ -21,6 +21,7 @@ import project.datastore.StoreResponseCode;
 import project.server.computation.ComputeResponseCode;
 import project.datastore.LoadDataWrapper;
 import project.server.computation.ComputeOutput;
+import java.util.List;
 
 public class TestJobHandlerImp {
     
@@ -63,7 +64,7 @@ public class TestJobHandlerImp {
         when(mockRequest.getDestination())
             .thenReturn(mock(OutputDataLocation.class));
         when(mockRequest.getDelimiters())
-            .thenReturn(new Character[] {});
+            .thenReturn(mock(List.class));
 
         // Job Handler should return a response.
         SubmitJobResponse response = testJobHandler.runJob(mockRequest);

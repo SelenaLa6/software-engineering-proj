@@ -1,15 +1,16 @@
 import project.server.InputDataLocation;
 import project.server.OutputDataLocation;
 import project.server.SubmitJobRequest;
+import java.util.List;
 
 public class SubmitJobRequestImp implements SubmitJobRequest{
     
     private InputDataLocation source;
     private OutputDataLocation destination;
-    private Character[] delimiters;
+    private List<Character> delimiters;
 
     // general constructor
-    public SubmitJobRequestImp(InputDataLocation source, OutputDataLocation destination, Character[] delimiters) {
+    public SubmitJobRequestImp(InputDataLocation source, OutputDataLocation destination, List<Character> delimiters) {
         this.source = source;
         this.destination = destination;
         this.delimiters = delimiters;
@@ -17,7 +18,7 @@ public class SubmitJobRequestImp implements SubmitJobRequest{
 
     // constructor with default delimiters (if delimiters not provided)
     public SubmitJobRequestImp(InputDataLocation source, OutputDataLocation destination) {
-        this(source, destination, new Character[] {',',';'});
+        this(source, destination, List.of(',', ';'));
     }
 
     @Override
@@ -31,7 +32,7 @@ public class SubmitJobRequestImp implements SubmitJobRequest{
     }
 
     @Override
-    public Character[] getDelimiters() {
+    public List<Character> getDelimiters() {
         return delimiters;
     }
 

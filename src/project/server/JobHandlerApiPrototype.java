@@ -1,6 +1,7 @@
 package project.server;
 
 import project.annotations.NetworkAPIPrototype;
+import java.util.List;
 
 public class JobHandlerApiPrototype {
 
@@ -10,7 +11,7 @@ public class JobHandlerApiPrototype {
         // Client submits some job to compute.
         SubmitJobRequest request = new SubmitJobRequest() {
             @Override
-            public Character[] getDelimiters() {
+            public List<Character> getDelimiters() {
                 // TODO Auto-generated method stub
                 return null;
             }
