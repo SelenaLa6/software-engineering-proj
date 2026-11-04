@@ -17,11 +17,25 @@ public class ComputationApiPrototype {
                 return null;
             }
             @Override
-            public List<Character> getDelimiters() {
+            public String getFieldDelim() {
                 // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'getDelimiters'");
+                throw new UnsupportedOperationException("Unimplemented method 'getFieldDelim'");
             }
-            
+            @Override
+            public String getRecordDelim() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'getRecordDelim'");
+            }
+            @Override
+            public String getFirstBlockDelim() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'getFirstBlockDelim'");
+            }
+            @Override
+            public String getSecondBlockDelim() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'getSecondBlockDelim'");
+            }
         };
         ComputeResponse response = engine.compute(request);
 
