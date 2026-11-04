@@ -1,6 +1,6 @@
 package project.server.computation;
 
-import java.util.List;
+import java.util.Collection;
 
 import project.annotations.ConceptualAPIPrototype;
 
@@ -12,7 +12,7 @@ public class ComputationApiPrototype {
         // Client submits a computation to perform.
         ComputeRequest request = new ComputeRequest() {
             @Override
-            public InputData getInputData() {
+            public Collection<Integer> getInputData() {
                 // TODO Auto-generated method stub
                 return null;
             }
@@ -43,7 +43,7 @@ public class ComputationApiPrototype {
         if (response.getResponseCode().successful) {
 
             // Client can see result of computation
-            ComputeOutput output = response.getOutput();
+            Collection<String> output = response.getOutput();
             System.out.println(output);
 
         }

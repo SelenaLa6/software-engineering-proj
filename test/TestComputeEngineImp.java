@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import project.server.computation.InputData;
+import java.util.Collection;
 
 import project.server.computation.ComputeRequest;
 import project.server.computation.ComputeResponse;
@@ -16,7 +16,7 @@ public class TestComputeEngineImp {
 
         // Client submits a request to compute something.
         ComputeRequest mockRequest = mock(ComputeRequest.class);
-        InputData mockInput = mock(InputData.class);
+        Collection<Integer> mockInput = mock(Collection.class);
         when(mockRequest.getInputData())
             .thenReturn(mockInput);
         // TODO: Mock behavior for mockInput when input format is finalized. Test input = 12, output = 1

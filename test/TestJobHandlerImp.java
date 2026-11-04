@@ -20,7 +20,7 @@ import project.datastore.LoadResponseCode;
 import project.datastore.StoreResponseCode;
 import project.server.computation.ComputeResponseCode;
 import project.datastore.LoadDataWrapper;
-import project.server.computation.ComputeOutput;
+import java.util.Collection;
 import java.util.List;
 
 public class TestJobHandlerImp {
@@ -53,7 +53,7 @@ public class TestJobHandlerImp {
         when(mockComputeResponse.getResponseCode())
             .thenReturn(ComputeResponseCode.SUCCESS);
         when(mockComputeResponse.getOutput())
-            .thenReturn(mock(ComputeOutput.class));
+            .thenReturn(mock(Collection.class));
 
         JobHandlerImp testJobHandler = new JobHandlerImp(mockDataStore, mockCompute);
 

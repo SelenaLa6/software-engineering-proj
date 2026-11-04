@@ -1,8 +1,9 @@
 package project.server.computation;
+import java.util.Collection;
 
 public interface ComputeRequest {
     
-    InputData getInputData();
+    Collection<Integer> getInputData();
     String getFieldDelim();
     String getRecordDelim();
     String getFirstBlockDelim();
