@@ -19,7 +19,6 @@ import project.server.computation.ComputeResponse;
 import project.datastore.LoadResponseCode;
 import project.datastore.StoreResponseCode;
 import project.server.computation.ComputeResponseCode;
-import project.datastore.LoadDataWrapper;
 import java.util.Collection;
 import java.util.List;
 
@@ -34,18 +33,26 @@ public class TestJobHandlerImp {
         
         // Mock successful behavior for data store API
         LoadDataResponse mockLoadResponse = mock(LoadDataResponse.class);
+
         when(mockDataStore.load(any(LoadDataRequest.class)))
             .thenReturn(mockLoadResponse);
+
         when(mockLoadResponse.getResponseCode())
             .thenReturn(LoadResponseCode.SUCCESS);
+
         when(mockLoadResponse.getData())
-                .thenReturn(mock(LoadDataWrapper.class));
+                .thenReturn(mock(Collection.class));
+
+
         StoreDataResponse mockStoreResponse = mock(StoreDataResponse.class);
+        
         when(mockDataStore.store(any(StoreDataRequest.class)))
             .thenReturn(mock(StoreDataResponse.class));
+
         when(mockStoreResponse.getResponseCode())
             .thenReturn(StoreResponseCode.SUCCESS);
-        
+    
+    
         // Mock successful behavior for compute API
         ComputeResponse mockComputeResponse = mock(ComputeResponse.class);
         when(mockCompute.compute(any(ComputeRequest.class)))
