@@ -27,15 +27,16 @@ public class ComputationApiPrototype {
                 throw new UnsupportedOperationException("Unimplemented method 'getRecordDelim'");
             }
             @Override
-            public String getFirstBlockDelim() {
+            public String getOpenBlockDelim() {
                 // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'getFirstBlockDelim'");
+                throw new UnsupportedOperationException("Unimplemented method 'openBlockDelim'");
             }
             @Override
-            public String getSecondBlockDelim() {
+            public String getCloseBlockDelim() {
                 // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'getSecondBlockDelim'");
+                throw new UnsupportedOperationException("Unimplemented method 'closeBlockDelim'");
             }
+            
         };
         ComputeResponse response = engine.compute(request);
 
