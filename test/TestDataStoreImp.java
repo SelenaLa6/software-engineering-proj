@@ -6,8 +6,7 @@ import project.datastore.LoadDataRequest;
 import project.datastore.LoadDataResponse;
 import project.datastore.StoreDataRequest;
 import project.datastore.StoreDataResponse;
-import project.server.InputDataLocation;
-import project.server.OutputDataLocation;
+import project.server.DataLocation;
 
 public class TestDataStoreImp {
     
@@ -19,7 +18,7 @@ public class TestDataStoreImp {
         // Client asks to load some data.
         LoadDataRequest loadRequest = mock(LoadDataRequest.class);
         when(loadRequest.getLoadLocation())
-            .thenReturn(mock(InputDataLocation.class));
+            .thenReturn(mock(DataLocation.class));
 
         // Data Store should successfully load data.
         LoadDataResponse loadResponse = testDataStore.load(loadRequest);
@@ -28,7 +27,7 @@ public class TestDataStoreImp {
         // Client asks to write some data.
         StoreDataRequest storeRequest = mock(StoreDataRequest.class);
         when(storeRequest.getStoreLocation())
-            .thenReturn(mock(OutputDataLocation.class));
+            .thenReturn(mock(DataLocation.class));
 
         // Data Store should successfully store data.
         StoreDataResponse storeResponse = testDataStore.store(storeRequest);

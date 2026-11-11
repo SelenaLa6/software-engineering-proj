@@ -16,12 +16,12 @@ public class JobHandlerApiPrototype {
                 return null;
             }
             @Override
-            public OutputDataLocation getDestination() {
+            public DataLocation getDestination() {
                 // TODO Auto-generated method stub
                 return null;
             }
             @Override
-            public InputDataLocation getSource() {
+            public DataLocation getSource() {
                 // TODO Auto-generated method stub
                 return null;
             }

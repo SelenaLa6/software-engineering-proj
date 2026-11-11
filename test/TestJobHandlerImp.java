@@ -6,8 +6,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import project.server.SubmitJobRequest;
 import project.server.SubmitJobResponse;
-import project.server.InputDataLocation;
-import project.server.OutputDataLocation;
+import project.server.DataLocation;
 import project.server.computation.ComputationApi;
 import project.datastore.DataStoreApi;
 import project.datastore.LoadDataRequest;
@@ -67,9 +66,9 @@ public class TestJobHandlerImp {
         // User submits some job to run.
         SubmitJobRequest mockRequest = mock(SubmitJobRequest.class);
         when(mockRequest.getSource())
-            .thenReturn(mock(InputDataLocation.class));
+            .thenReturn(mock(DataLocation.class));
         when(mockRequest.getDestination())
-            .thenReturn(mock(OutputDataLocation.class));
+            .thenReturn(mock(DataLocation.class));
         when(mockRequest.getDelimiters())
             .thenReturn(mock(List.class));
 
