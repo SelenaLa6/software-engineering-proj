@@ -7,10 +7,10 @@ public class SubmitJobRequestImp implements SubmitJobRequest{
     
     private InputDataLocation source;
     private OutputDataLocation destination;
-    private List<Character> delimiters;
+    private List<String> delimiters;
 
     // general constructor
-    public SubmitJobRequestImp(InputDataLocation source, OutputDataLocation destination, List<Character> delimiters) {
+    public SubmitJobRequestImp(InputDataLocation source, OutputDataLocation destination, List<String> delimiters) {
         this.source = source;
         this.destination = destination;
         this.delimiters = delimiters;
@@ -18,7 +18,7 @@ public class SubmitJobRequestImp implements SubmitJobRequest{
 
     // constructor with default delimiters (if delimiters not provided)
     public SubmitJobRequestImp(InputDataLocation source, OutputDataLocation destination) {
-        this(source, destination, List.of(',', ';'));
+        this(source, destination, List.of(",", ";"));
     }
 
     @Override
@@ -32,7 +32,7 @@ public class SubmitJobRequestImp implements SubmitJobRequest{
     }
 
     @Override
-    public List<Character> getDelimiters() {
+    public List<String> getDelimiters() {
         return delimiters;
     }
 

@@ -5,6 +5,6 @@ public interface SubmitJobRequest {
 
     public InputDataLocation getSource();
     public OutputDataLocation getDestination();
-    public List<Character> getDelimiters();
+    public List<String> getDelimiters();
 
 }

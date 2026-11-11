@@ -11,7 +11,7 @@ public class JobHandlerApiPrototype {
         // Client submits some job to compute.
         SubmitJobRequest request = new SubmitJobRequest() {
             @Override
-            public List<Character> getDelimiters() {
+            public List<String> getDelimiters() {
                 // TODO Auto-generated method stub
                 return null;
             }
