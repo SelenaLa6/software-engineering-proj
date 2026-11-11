@@ -1,4 +1,8 @@
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.Reader;
+import java.io.Writer;
 
 import project.server.DataLocation;
 
@@ -10,8 +14,23 @@ public class FileLocation implements DataLocation {
         this.wrappedFile = new File(pathname);
     }
 
-    public File getFile() {
-        return wrappedFile;
+    // TODO: add proper exception handling
+    @Override
+    public Reader getReader(){
+        try {
+            return new FileReader(wrappedFile);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    @Override
+    public Writer getWriter() {
+        try {
+            return new FileWriter(wrappedFile);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 }
