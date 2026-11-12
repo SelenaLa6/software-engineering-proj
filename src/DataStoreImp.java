@@ -19,6 +19,7 @@ public class DataStoreImp implements DataStoreApi {
         try {
 
             Collection<Integer> loadedData = read(request.getLoadLocation());
+            
             return new LoadDataResponseImp(loadedData, LoadResponseCode.SUCCESS);
         
         } catch (Exception e) {
@@ -47,7 +48,6 @@ public class DataStoreImp implements DataStoreApi {
             return new StoreDataResponseImp(StoreResponseCode.FAILURE);
 
         }
-
     }
 
     private Collection<Integer> read(DataLocation dl){
@@ -55,6 +55,7 @@ public class DataStoreImp implements DataStoreApi {
         if (dl instanceof FileLocation) {
             
             try {
+
                 FileReader reader = (FileReader) dl.getReader();
                 Collection<Integer> data = new ArrayList<>();
                 String token = "";
@@ -71,6 +72,7 @@ public class DataStoreImp implements DataStoreApi {
                 }
 
                 return data;
+
             } catch (Exception e) {
                 return null;
             }
@@ -85,6 +87,7 @@ public class DataStoreImp implements DataStoreApi {
         if (dl instanceof FileLocation) {
             
             try {
+
                 FileWriter writer = (FileWriter) dl.getWriter();
 
                 for (String str : dataToWrite) {
@@ -92,6 +95,7 @@ public class DataStoreImp implements DataStoreApi {
                 }
 
                 return true;
+
             } catch (Exception e) {
                 return false;
             }
@@ -100,8 +104,5 @@ public class DataStoreImp implements DataStoreApi {
             return false;
         }
     }
-
-
-
 
 }
