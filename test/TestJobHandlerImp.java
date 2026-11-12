@@ -30,7 +30,7 @@ public class TestJobHandlerImp {
         DataStoreApi mockDataStore = mock(DataStoreApi.class);
         ComputationApi mockCompute = mock(ComputationApi.class);
         
-        // Mock successful behavior for data store API
+        // Mock successful load behavior for data store API
         LoadDataResponse mockLoadResponse = mock(LoadDataResponse.class);
 
         when(mockDataStore.load(any(LoadDataRequest.class)))
@@ -40,42 +40,50 @@ public class TestJobHandlerImp {
             .thenReturn(LoadResponseCode.SUCCESS);
 
         when(mockLoadResponse.getData())
-                .thenReturn(mock(Collection.class));
+                .thenReturn((Collection<Integer>) mock(Collection.class));
 
 
+        // Mock successful store behavior for data store API
         StoreDataResponse mockStoreResponse = mock(StoreDataResponse.class);
         
         when(mockDataStore.store(any(StoreDataRequest.class)))
-            .thenReturn(mock(StoreDataResponse.class));
+            .thenReturn(mockStoreResponse);
 
         when(mockStoreResponse.getResponseCode())
             .thenReturn(StoreResponseCode.SUCCESS);
     
     
-        // Mock successful behavior for compute API
+        // Mock successful compute behavior for compute API
         ComputeResponse mockComputeResponse = mock(ComputeResponse.class);
+
         when(mockCompute.compute(any(ComputeRequest.class)))
             .thenReturn(mockComputeResponse);
+
         when(mockComputeResponse.getResponseCode())
             .thenReturn(ComputeResponseCode.SUCCESS);
+
         when(mockComputeResponse.getOutput())
-            .thenReturn(mock(Collection.class));
+            .thenReturn((Collection<String>) mock(Collection.class));
 
         JobHandlerImp testJobHandler = new JobHandlerImp(mockDataStore, mockCompute);
 
+        
         // User submits some job to run.
         SubmitJobRequest mockRequest = mock(SubmitJobRequest.class);
+
         when(mockRequest.getSource())
             .thenReturn(mock(DataLocation.class));
+
         when(mockRequest.getDestination())
             .thenReturn(mock(DataLocation.class));
+
         when(mockRequest.getDelimiters())
-            .thenReturn(mock(List.class));
+            .thenReturn((List<String>) mock(List.class));
 
         // Job Handler should return a response.
         SubmitJobResponse response = testJobHandler.runJob(mockRequest);
 
-        // Response should be successful.
+        // Assert true since loading, computing, and storing were "successful"
         assertTrue(response.getResponseCode().successful);
 
     }
