@@ -3,19 +3,19 @@ import project.server.DataLocation;
 
 public class LoadDataRequestImp implements LoadDataRequest {
 
-    private FileLocation fileLocation;
+    private DataLocation dataLocation;
 
-    public LoadDataRequestImp(FileLocation fileLocation) {
-        this.fileLocation = fileLocation;
+    public LoadDataRequestImp(DataLocation dataLocation) {
+        this.dataLocation = dataLocation;
     }
 
-    public LoadDataRequestImp(String pathname) {
-        this(new FileLocation(pathname));
+    public LoadDataRequestImp(String filename) {
+        this(new FileLocation(filename));
     }
 
     @Override
     public DataLocation getLoadLocation() {
-        return fileLocation;
+        return dataLocation;
     }
     
 }
