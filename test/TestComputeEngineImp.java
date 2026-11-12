@@ -29,8 +29,8 @@ public class TestComputeEngineImp {
         ComputeResponse response = testComputeEngine.compute(request);
 
         assertTrue(response.getResponseCode().successful);
-        assertEquals(response.getOutput().size(), 1);
-        assertTrue(response.getOutput().contains("12,1;"));
+        assertEquals(1, response.getOutput().size());
+        assertEquals("12,1;", response.getOutput().toArray()[0]);
 
     }
 
