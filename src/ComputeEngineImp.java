@@ -63,7 +63,7 @@ public class ComputeEngineImp implements ComputationApi {
         Integer currentNum = 1;
         String numStr = "" + currentNum;
 
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             
             numStr = numStr.substring(1);
             
