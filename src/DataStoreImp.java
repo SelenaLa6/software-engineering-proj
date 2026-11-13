@@ -71,6 +71,12 @@ public class DataStoreImp implements DataStoreApi {
                     }
                 }
 
+                if (!token.isEmpty()) {
+                    Integer num = Integer.parseInt(token);
+                    data.add(num);
+                }
+
+                reader.close();
                 return data;
 
             } catch (Exception e) {
@@ -83,7 +89,7 @@ public class DataStoreImp implements DataStoreApi {
     }
 
     private Boolean write(DataLocation dl, Collection<String> dataToWrite) {
-        
+
         if (dl instanceof FileLocation) {
             
             try {
@@ -94,6 +100,8 @@ public class DataStoreImp implements DataStoreApi {
                     writer.write(str);
                 }
 
+                writer.close();
+
                 return true;
 
             } catch (Exception e) {
@@ -103,6 +111,7 @@ public class DataStoreImp implements DataStoreApi {
         } else {
             return false;
         }
+
     }
 
 }
