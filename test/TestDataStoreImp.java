@@ -20,15 +20,6 @@ import project.server.DataLocation;
 
 public class TestDataStoreImp {
 
-    // @Test 
-    // public void dataStoreSmokeTest() throws Exception {
-
-    //     loadSmokeTest();
-
-    //     storeSmokeTest();
-
-    // }
-
     @Test
     public void loadSmokeTest() throws Exception {
 
@@ -53,6 +44,7 @@ public class TestDataStoreImp {
         
         assertTrue(loadResponse.getResponseCode().successful);
         
+        // Check that the data store actually loaded all the data
         Collection<Integer> loadedData = loadResponse.getData();
         assertEquals(3, loadedData.size());
         assertTrue(loadedData.containsAll(List.of(1, 2, 3)));
