@@ -1,7 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import project.server.JobHandlerApi;
 import project.server.SubmitJobRequest;
+import project.server.computation.ComputationApi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +15,8 @@ public class ComputeEngineIntegrationTest {
 
         // Instantiate all 3 APIs
         InMemDataStore testDataStore = new InMemDataStore();
-        ComputeEngineImp testComputeEngine = new ComputeEngineImp();
-        JobHandlerImp testJobHandler = new JobHandlerImp(
+        ComputationApi testComputeEngine = new ComputeEngineImp();
+        JobHandlerApi testJobHandler = new JobHandlerImp(
             testDataStore, testComputeEngine);
 
         // Initial input

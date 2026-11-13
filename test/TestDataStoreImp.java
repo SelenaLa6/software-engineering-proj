@@ -1,10 +1,7 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import java.io.File;
 import java.io.FileReader;
@@ -12,18 +9,18 @@ import java.io.FileWriter;
 import java.util.Collection;
 import java.util.List;
 
+import project.datastore.DataStoreApi;
 import project.datastore.LoadDataRequest;
 import project.datastore.LoadDataResponse;
 import project.datastore.StoreDataRequest;
 import project.datastore.StoreDataResponse;
-import project.server.DataLocation;
 
 public class TestDataStoreImp {
 
     @Test
     public void loadSmokeTest() throws Exception {
 
-        DataStoreImp dataStore = new DataStoreImp();
+        DataStoreApi dataStore = new DataStoreImp();
 
         // Create a test file for loading
         String loadFilename = "load-test-file.txt";
@@ -54,7 +51,7 @@ public class TestDataStoreImp {
     @Test
     public void storeSmokeTest() throws Exception {
 
-        DataStoreImp dataStore = new DataStoreImp();
+        DataStoreApi dataStore = new DataStoreImp();
 
         // Create a test file for storing
         String storeFilename = "store-test-file.txt";
