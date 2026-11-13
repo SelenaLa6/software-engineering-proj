@@ -32,9 +32,9 @@ public class ComputeEngineIntegrationTest {
         testJobHandler.runJob(request);
 
         // Validate output
-        assertEquals("1,1",output.outputList.get(0));
-        assertEquals("10,1",output.outputList.get(1));
-        assertEquals("25,7",output.outputList.get(2));
+        assertEquals("1,1;",output.outputList.get(0));
+        assertEquals("10,1;",output.outputList.get(1));
+        assertEquals("25,7;",output.outputList.get(2));
 
     }
 
