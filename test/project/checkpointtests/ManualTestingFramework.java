@@ -8,15 +8,6 @@ import impServer.ComputeEngineImp;
 import impServer.FileLocation;
 import impServer.JobHandlerImp;
 import impServer.SubmitJobRequestImp;
-// import edu.softwareeng.sample.ComputationCoordinator;
-// import edu.softwareeng.sample.ComputeEngine;
-// import edu.softwareeng.sample.ComputeEngineImpl;
-// import edu.softwareeng.sample.ComputeRequest;
-// import edu.softwareeng.sample.CoordinatorImpl;
-// import edu.softwareeng.sample.DataStore;
-// import edu.softwareeng.sample.DataStoreImpl;
-// import edu.softwareeng.sample.FileInputConfig;
-// import edu.softwareeng.sample.FileOutputConfig;
 import project.datastore.DataStoreApi;
 import project.server.JobHandlerApi;
 import project.server.SubmitJobRequest;
@@ -44,8 +35,5 @@ public class ManualTestingFramework {
 
         jobHandler.runJob(req);
 
-        // Helpful hint: the working directory of this program is <root project dir>,
-        // so you can refer to the files just using the INPUT/OUTPUT constants. You do not 
-        // need to (and should not) actually create those files in your repo
     }
 }
