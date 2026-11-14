@@ -69,7 +69,12 @@ public class TestDataStoreImp {
 
         // Check that the store file was correctly written to
         FileReader fr = new FileReader(storeFile);
-        String storeStr = fr.readAllAsString();
+        String storeStr = "";
+
+        while (fr.ready()) {
+            storeStr = storeStr + (char)fr.read();
+        }
+
         fr.close();
         
         assertEquals("1,1;2,2;3,3;", storeStr);
