@@ -1,5 +1,7 @@
+package impdatastore;
 import java.util.Collection;
 
+import impserver.FileLocation;
 import project.datastore.StoreDataRequest;
 import project.server.DataLocation;
 

@@ -1,3 +1,5 @@
+package impdatastore;
+import impserver.FileLocation;
 import project.datastore.LoadDataRequest;
 import project.server.DataLocation;
 

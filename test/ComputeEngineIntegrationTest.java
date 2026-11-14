@@ -1,4 +1,9 @@
 import org.junit.jupiter.api.Test;
+
+import impserver.JobHandlerImp;
+import impserver.SubmitJobRequestImp;
+import impserver.impcompute.ComputeEngineImp;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import project.server.JobHandlerApi;
