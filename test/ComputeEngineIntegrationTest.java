@@ -1,8 +1,8 @@
 import org.junit.jupiter.api.Test;
 
-import impServer.ComputeEngineImp;
-import impServer.JobHandlerImp;
-import impServer.SubmitJobRequestImp;
+import impserver.JobHandlerImp;
+import impserver.SubmitJobRequestImp;
+import impserver.impcompute.ComputeEngineImp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

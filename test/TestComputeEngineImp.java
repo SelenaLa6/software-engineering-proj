@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import impServer.ComputeEngineImp;
-import impServer.ComputeRequestImp;
+import impserver.impcompute.ComputeEngineImp;
+import impserver.impcompute.ComputeRequestImp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

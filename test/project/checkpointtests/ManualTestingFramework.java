@@ -3,11 +3,11 @@ package project.checkpointtests;
 import java.io.File;
 import java.util.List;
 
-import impDatastore.DataStoreImp;
-import impServer.ComputeEngineImp;
-import impServer.FileLocation;
-import impServer.JobHandlerImp;
-import impServer.SubmitJobRequestImp;
+import impdatastore.DataStoreImp;
+import impserver.FileLocation;
+import impserver.JobHandlerImp;
+import impserver.SubmitJobRequestImp;
+import impserver.impcompute.ComputeEngineImp;
 import project.datastore.DataStoreApi;
 import project.server.JobHandlerApi;
 import project.server.SubmitJobRequest;

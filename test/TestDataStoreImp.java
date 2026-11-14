@@ -1,9 +1,9 @@
 import org.junit.jupiter.api.Test;
 
-import impDatastore.DataStoreImp;
-import impDatastore.LoadDataRequestImp;
-import impDatastore.StoreDataRequestImp;
-import impServer.FileLocation;
+import impdatastore.DataStoreImp;
+import impdatastore.LoadDataRequestImp;
+import impdatastore.StoreDataRequestImp;
+import impserver.FileLocation;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

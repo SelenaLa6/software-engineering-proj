@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import impServer.JobHandlerImp;
+import impserver.JobHandlerImp;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;

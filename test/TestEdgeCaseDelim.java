@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import impServer.ComputeEngineImp;
-import impServer.ComputeRequestImp;
+import impserver.impcompute.ComputeEngineImp;
+import impserver.impcompute.ComputeRequestImp;
 import project.server.computation.ComputationApi;
 import project.server.computation.ComputeRequest;
 import project.server.computation.ComputeResponse;

@@ -1,4 +1,4 @@
-package impServer;
+package impserver;
 import project.server.DataLocation;
 import project.server.SubmitJobRequest;
 import java.util.List;

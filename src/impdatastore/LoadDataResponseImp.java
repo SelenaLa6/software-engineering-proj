@@ -1,4 +1,4 @@
-package impDatastore;
+package impdatastore;
 import java.util.Collection;
 
 import project.datastore.LoadDataResponse;

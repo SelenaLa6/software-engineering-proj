@@ -1,10 +1,10 @@
-package impDatastore;
+package impdatastore;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import impServer.FileLocation;
+import impserver.FileLocation;
 import project.datastore.DataStoreApi;
 import project.datastore.LoadDataRequest;
 import project.datastore.LoadDataResponse;
