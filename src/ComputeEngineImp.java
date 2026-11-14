@@ -78,8 +78,6 @@ public class ComputeEngineImp implements ComputationApi {
 
     /*
     Builder for the format function, since delimiters will differ between jobs.
-    TODO:
-    Suspected bug - String.format uses % for placeholders, what happens if % is used in delims?
     */
     public class FormatBuilder {
 
@@ -89,34 +87,34 @@ public class ComputeEngineImp implements ComputationApi {
         private String closeBlockDelim;
 
         public FormatBuilder setFieldDelim(String c) {
-            this.fieldDelim = c;
+            this.fieldDelim = adjustString(c);
             return this;
         }
 
         public FormatBuilder setRecordDelim(String c) {
-            this.recordDelim = c;
+            this.recordDelim = adjustString(c);
             return this;
         }
 
         public FormatBuilder setOpenBlockDelim(String c) {
-            this.openBlockDelim = c;
+            this.openBlockDelim = adjustString(c);
             return this;
         }
 
         public FormatBuilder setCloseBlockDelim(String c) {
-            this.closeBlockDelim = c;
+            this.closeBlockDelim = adjustString(c);
             return this;
         }
 
         public Function<Map.Entry<Integer,Integer>,String> build() {
 
             StringBuilder sb = new StringBuilder()
-                .append(emptyIfNull(openBlockDelim))
+                .append(openBlockDelim)
                 .append("%d")
-                .append(emptyIfNull(fieldDelim))
+                .append(fieldDelim)
                 .append("%d")
-                .append(emptyIfNull(closeBlockDelim))
-                .append(emptyIfNull(recordDelim));
+                .append(closeBlockDelim)
+                .append(recordDelim);
 
             return (pair) -> {
                 String format = new String(sb);
@@ -129,8 +127,16 @@ public class ComputeEngineImp implements ComputationApi {
 
         }
 
+        private String adjustString(String c) {
+            return fixPercent(emptyIfNull(c));
+        }
+
         private String emptyIfNull(String c) {
             return c != null ? c : "";
+        }
+
+        private String fixPercent(String c) {
+            return c.replaceAll("%","%%");
         }
 
     }
