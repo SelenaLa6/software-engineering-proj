@@ -1,8 +1,8 @@
 package project.datastore;
-import project.server.InputDataLocation;
+import project.server.DataLocation;
 
 public interface LoadDataRequest {
 
-    InputDataLocation getLoadLocation();
+    DataLocation getLoadLocation();
 
 }

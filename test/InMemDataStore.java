@@ -1,9 +1,9 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collection;
 import project.datastore.DataStoreApi;
 import project.datastore.LoadDataRequest;
 import project.datastore.LoadDataResponse;
-import project.datastore.LoadDataWrapper;
 import project.datastore.LoadResponseCode;
 import project.datastore.StoreDataRequest;
 import project.datastore.StoreDataResponse;
@@ -17,6 +17,7 @@ class InMemDataStore implements DataStoreApi {
 
         LoadDataResponse response = new LoadDataResponse() {
             public List<Integer> loadedData = deepCopyInput(inputLocation.inputList);
+            
             @Override
             public LoadResponseCode getResponseCode() {
                 if (inputLocation != null && inputLocation.inputList != null) {
@@ -25,12 +26,10 @@ class InMemDataStore implements DataStoreApi {
                     return LoadResponseCode.FAILURE;
                 }
             }
+
             @Override
-            public LoadDataWrapper getData() {
-                LoadDataWrapper wrappedData = new LoadDataWrapper() {
-                    public List<Integer> dataList = loadedData;
-                };
-                return wrappedData;
+            public Collection<Integer> getData() {
+                return loadedData;
             }
         };
         return response;
@@ -39,10 +38,10 @@ class InMemDataStore implements DataStoreApi {
     @Override
     public StoreDataResponse store(StoreDataRequest storeRequest) {
         InMemOutputConfig outputLocation = (InMemOutputConfig)storeRequest.getStoreLocation();
-        InMemOutputData dataToStore = (InMemOutputData)storeRequest.getData();
+        Collection<String> dataToStore = storeRequest.getData();
 
         if (outputLocation.outputList != null) {
-            for(String data : dataToStore.outputData) {
+            for(String data : dataToStore) {
                 outputLocation.outputList.add(data);
             }
         }

@@ -1,8 +1,8 @@
 package project.datastore;
 
 import project.annotations.ProcessAPIPrototype;
-import project.server.InputDataLocation;
-import project.server.OutputDataLocation;
+import project.server.DataLocation;
+import java.util.Collection;
 
 public class DataStoreApiPrototype {
     
@@ -12,7 +12,7 @@ public class DataStoreApiPrototype {
         // Client tries to load data.
         LoadDataRequest loadRequest = new LoadDataRequest() {
             @Override
-            public InputDataLocation getLoadLocation() {
+            public DataLocation getLoadLocation() {
                 // TODO Auto-generated method stub
                 return null;
             }
@@ -23,19 +23,19 @@ public class DataStoreApiPrototype {
         if (loadResponse.getResponseCode().successful) {
 
             // Let the client see the retrieved data.
-            LoadDataWrapper dataLoaded = loadResponse.getData();
+            Collection<Integer> dataLoaded = loadResponse.getData();
 
         }
 
         // Client tries to store some data.
         StoreDataRequest storeRequest = new StoreDataRequest() {
             @Override
-            public OutputDataLocation getStoreLocation() {
+            public DataLocation getStoreLocation() {
                 // TODO Auto-generated method stub
                 return null;
             }
             @Override
-            public StoreDataWrapper getData() {
+            public Collection<String> getData() {
                 // TODO Auto-generated method stub
                 return null;
             }

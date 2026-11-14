@@ -1,5 +1,7 @@
 package project.server.computation;
 
+import java.util.Collection;
+
 import project.annotations.ConceptualAPIPrototype;
 
 public class ComputationApiPrototype {
@@ -10,10 +12,31 @@ public class ComputationApiPrototype {
         // Client submits a computation to perform.
         ComputeRequest request = new ComputeRequest() {
             @Override
-            public InputData getInputData() {
+            public Collection<Integer> getInputData() {
                 // TODO Auto-generated method stub
                 return null;
             }
+            @Override
+            public String getFieldDelim() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'getFieldDelim'");
+            }
+            @Override
+            public String getRecordDelim() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'getRecordDelim'");
+            }
+            @Override
+            public String getOpenBlockDelim() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'openBlockDelim'");
+            }
+            @Override
+            public String getCloseBlockDelim() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'closeBlockDelim'");
+            }
+            
         };
         ComputeResponse response = engine.compute(request);
 
@@ -21,7 +44,7 @@ public class ComputationApiPrototype {
         if (response.getResponseCode().successful) {
 
             // Client can see result of computation
-            ComputeOutput output = response.getOutput();
+            Collection<String> output = response.getOutput();
             System.out.println(output);
 
         }

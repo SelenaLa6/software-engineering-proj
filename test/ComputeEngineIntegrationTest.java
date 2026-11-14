@@ -1,7 +1,14 @@
 import org.junit.jupiter.api.Test;
+
+import impserver.JobHandlerImp;
+import impserver.SubmitJobRequestImp;
+import impserver.impcompute.ComputeEngineImp;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import project.server.JobHandlerApi;
 import project.server.SubmitJobRequest;
+import project.server.computation.ComputationApi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +20,8 @@ public class ComputeEngineIntegrationTest {
 
         // Instantiate all 3 APIs
         InMemDataStore testDataStore = new InMemDataStore();
-        ComputeEngineImp testComputeEngine = new ComputeEngineImp();
-        JobHandlerImp testJobHandler = new JobHandlerImp(
+        ComputationApi testComputeEngine = new ComputeEngineImp();
+        JobHandlerApi testJobHandler = new JobHandlerImp(
             testDataStore, testComputeEngine);
 
         // Initial input
@@ -32,9 +39,9 @@ public class ComputeEngineIntegrationTest {
         testJobHandler.runJob(request);
 
         // Validate output
-        assertEquals("1,1",output.outputList.get(0));
-        assertEquals("10,1",output.outputList.get(1));
-        assertEquals("25,7",output.outputList.get(2));
+        assertEquals("1,1;",output.outputList.get(0));
+        assertEquals("10,1;",output.outputList.get(1));
+        assertEquals("25,7;",output.outputList.get(2));
 
     }
 

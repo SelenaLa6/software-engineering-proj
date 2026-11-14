@@ -1,10 +1,10 @@
 package project.datastore;
 
-import project.server.OutputDataLocation;
-
+import project.server.DataLocation;
+import java.util.Collection;
 public interface StoreDataRequest {
     
-    OutputDataLocation getStoreLocation();
-    StoreDataWrapper getData();
+    DataLocation getStoreLocation();
+    Collection<String> getData();
 
 }

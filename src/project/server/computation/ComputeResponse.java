@@ -1,8 +1,8 @@
 package project.server.computation;
-
+import java.util.Collection;
 public interface ComputeResponse {
     
     ComputeResponseCode getResponseCode();
-    ComputeOutput getOutput();
+    Collection<String> getOutput();
 
 }

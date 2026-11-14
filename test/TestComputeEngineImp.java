@@ -1,9 +1,13 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import project.server.computation.InputData;
 
+import impserver.impcompute.ComputeEngineImp;
+import impserver.impcompute.ComputeRequestImp;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.List;
+
+import project.server.computation.ComputationApi;
 import project.server.computation.ComputeRequest;
 import project.server.computation.ComputeResponse;
 
@@ -12,19 +16,22 @@ public class TestComputeEngineImp {
     @Test 
     public void computeEngineSmokeTest() {
 
-        ComputeEngineImp testComputeEngine = new ComputeEngineImp();
+        ComputationApi testComputeEngine = new ComputeEngineImp();
 
         // Client submits a request to compute something.
-        ComputeRequest mockRequest = mock(ComputeRequest.class);
-        InputData mockInput = mock(InputData.class);
-        when(mockRequest.getInputData())
-            .thenReturn(mockInput);
-        // TODO: Mock behavior for mockInput when input format is finalized. Test input = 12, output = 1
+        ComputeRequest request = new ComputeRequestImp(
+            List.of(12),
+            ",",
+            ";",
+            null,
+            null
+        );
+        
+        ComputeResponse response = testComputeEngine.compute(request);
 
-        // Compute engine should successfully process the data.
-        ComputeResponse response = testComputeEngine.compute(mockRequest);
         assertTrue(response.getResponseCode().successful);
-        // TODO: Assert that output is 1 when output format is finalized.
+        assertEquals(1, response.getOutput().size());
+        assertEquals("12,1;", response.getOutput().toArray()[0]);
 
     }
 

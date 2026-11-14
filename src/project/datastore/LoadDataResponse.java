@@ -1,8 +1,9 @@
 package project.datastore;
+import java.util.Collection;
 
 public interface LoadDataResponse {
 
     LoadResponseCode getResponseCode();
-    LoadDataWrapper getData();
+    Collection<Integer> getData();
 
 }
